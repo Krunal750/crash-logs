@@ -1,38 +1,119 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
   display: flex;
   flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.app-name {
+  font-size: 24px;
+  margin: 0;
+}
+
+.middle-section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex: 1;
+  margin: 0 20px;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+}
+
+.close-button {
+  background-color: #dc3545;
   color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-.App-link {
-  color: #61dafb;
+.content {
+  display: flex;
+  flex: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sidebar {
+  width: 250px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-right: 1px solid #dee2e6;
+}
+
+.activity-section,
+.notes-section {
+  margin-bottom: 20px;
+}
+
+.activity-section h2,
+.notes-section h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.session-info h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.video-player {
+  margin-bottom: 20px;
+}
+
+.graphs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logs {
+  width: 300px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-left: 1px solid #dee2e6;
+}
+
+.logs h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.log-event {
+  margin-bottom: 10px;
+}
+
+.middle-section ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.middle-section ul li:not(:last-child) {
+  margin-right: 60px;
 }

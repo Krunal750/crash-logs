@@ -1,0 +1,137 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .header {
+
+    color: #000000;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+  
+  }
+  .content {
+    display: flex;
+    flex: 1;
+  }
+  
+  .left-pane, .right-pane {
+    width: 20%;
+    padding: 10px;
+    background-color: #f4f4f4;
+  }
+  
+  .main-pane {
+    flex: 1;
+    padding: 10px;
+    background-color: #fff;
+  }
+  
+  video {
+    width: 100%;
+    height: auto;
+  }
+  
+  .middle-section ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+  } 
+  .left-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .app-name {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .middle-section {
+    flex: 1;
+    margin: 0px 20px ;
+  }
+  
+  .right-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .close-button {
+    background-color: #ff2d42;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .content {
+    display: flex;
+    flex: 1;
+  }
+  
+  .sidebar {
+    width: 250px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-right: 1px solid #dee2e6;
+  }
+  
+  .activity-section,
+  .notes-section {
+    margin-bottom: 20px;
+  }
+  
+  .activity-section h2,
+  .notes-section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .session-info h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .video-player {
+    margin-bottom: 20px;
+  }
+  
+  .graphs {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .logs {
+    width: 300px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-left: 1px solid #dee2e6;
+  }
+  
+  .logs h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .log-event {
+    margin-bottom: 10px;
+  }
