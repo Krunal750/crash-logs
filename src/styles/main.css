@@ -5,9 +5,7 @@
   }
   
   .header {
-
     color: #000000;
-    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,9 +22,14 @@
   .left-pane, .right-pane {
     width: 20%;
     padding: 10px;
-    background-color: #f4f4f4;
+    background-color: #f8f9fa;
   }
-  
+  .left-pane{
+    border-right: 1px solid #e2e5e8;
+  }
+  .right-pane{
+    border-left: 1px solid #e2e5e8;
+  }
   .main-pane {
     flex: 1;
     padding: 10px;
@@ -36,6 +39,7 @@
   video {
     width: 100%;
     height: auto;
+    border-radius: 10px;
   }
   
   .middle-section ul {
@@ -78,16 +82,13 @@
     font-size: 16px;
   }
   
-  .content {
-    display: flex;
-    flex: 1;
-  }
+ h2{
+  color: #ff2d42;
+ }
   
   .sidebar {
-    width: 250px;
-    padding: 20px;
-    background-color: #f0f0f0;
-    border-right: 1px solid #dee2e6;
+    width: auto;
+    padding: 10px 20px;
   }
   
   .activity-section,
@@ -95,17 +96,37 @@
     margin-bottom: 20px;
   }
   
-  .activity-section h2,
+  .activity-section ,
   .notes-section h2 {
     font-size: 18px;
     margin-bottom: 10px;
   }
   
   .session-info h3 {
-    font-size: 16px;
-    margin-bottom: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
   
+  .session-details, .notes-details , .log-details{
+    margin-left: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    margin: auto;
+    padding: 10px;
+  }
+
+  
+  .collapsible-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .collapsible-header svg {
+    margin-left: 10px;
+  }
   .main-content {
     flex: 1;
     padding: 20px;
@@ -121,17 +142,137 @@
   }
   
   .logs {
-    width: 300px;
+    width: auto;
     padding: 20px;
-    background-color: #f0f0f0;
-    border-left: 1px solid #dee2e6;
+    
   }
   
   .logs h2 {
-    font-size: 18px;
     margin-bottom: 10px;
   }
   
   .log-event {
     margin-bottom: 10px;
+  }
+
+  .search-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    
+  }
+  
+  .search-container .search-icon {
+    margin: 5px;
+  }
+  
+  .search-container .clear-icon {
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  
+  .search-container input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #f8f9fa;
+    border-radius: 10px;
+  }
+  
+  .log-event h3 {
+    cursor: pointer;
+    display: flex;
+    font-size: 18px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .log-details p {
+    margin: 10px;
+    font-size: 14px;
+  }
+
+  .video-player-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .video-element {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 10px;
+  }
+  
+  .video-controls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .video-controls button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+  }
+  
+  .video-controls .video-time {
+    margin-left: 10px;
+  }
+  
+  .toggle-buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 10px;
+  }
+  
+  .toggle-buttons button {
+    padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.toggle-buttons button:hover {
+  background-color: #0056b3;
+}
+
+.toggle-buttons button.active {
+  background-color: #28a745;
+}
+
+.toggle-buttons button.inactive {
+  background-color: #6c757d;
+}
+  
+  .timeline {
+    width: 100%;
+    max-width: 800px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+  
+  .timeline-logs {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+  }
+  
+  .graphs {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  .graph {
+    width: 30%;
+    border: 1px solid #ccc;
+    padding: 10px;
   }
