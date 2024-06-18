@@ -4,6 +4,13 @@
     height: 100vh;
   }
   
+.content {
+    display: flex;
+    flex: 1;
+  }
+  
+  /** navbar ***/
+
   .header {
     color: #000000;
     display: flex;
@@ -14,11 +21,12 @@
     border-bottom: 2px solid #dee2e6;
   
   }
-  .content {
-    display: flex;
-    flex: 1;
-  }
   
+  .app-name {
+    font-size: 24px;
+    margin: 0;
+  }
+
   .left-pane, .right-pane {
     width: 20%;
     padding: 10px;
@@ -36,15 +44,7 @@
     background-color: #fff;
   }
   
-  video {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
-  
-  ul {
-    list-style-type: none;
-  } 
+ 
 
   .menu{
     display: flex;
@@ -62,10 +62,7 @@
     margin-right: 10px;
   }
   
-  .app-name {
-    font-size: 24px;
-    margin: 0;
-  }
+  
   
   .middle-section {
    
@@ -86,7 +83,19 @@
     cursor: pointer;
     font-size: 16px;
   }
+
+  /**other **/
+
+
+   video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
   
+  ul {
+    list-style-type: none;
+  } 
  h2{
   color: #000000;
  }
@@ -148,6 +157,9 @@
     justify-content: space-between;
   }
   
+
+  /** logs section **/
+
   .logs {
     width: auto;
     padding: 20px;
@@ -213,114 +225,134 @@
     font-size: 14px;
   }
 
-  /**** Main Section - Video ****/
 
-  .video-btns{
-    width: 100%;
-  }
-  .video-player-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .video-element {
-    width: 100%;
-    max-width: 800px;
-    margin-bottom: 10px;
-  }
-  
-  .video-controls {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .video-controls button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin: 0 5px;
-  }
-  
-  .video-controls .video-time {
-    margin-left: 10px;
-  }
-  
-  .toggle-buttons {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 800px;
-    margin-bottom: 10px;
-  }
-  
-  .toggle-button {
-    position: relative;
-    background-color: #ddd;
-    border: none;
-    border-radius: 99px;
-    width: 50px; 
-    height: 28px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .toggle-button .thumb {
-    height: 20px;
-    width: 20px;
-    background-color: #fff;
-    border-radius: 99px;
-    transform: translateX(0);
-    transition: left 0.15s ease;
-    position: absolute;
-    transform: translateY(-50%);
-  }
-  
-  .toggle-button.active .thumb {
-    left: calc(50px - 20px);
-  }
-  
-  
-  .toggle-buttons button:hover {
-    background-color: #0056b3;
-  }
-  
-  .toggle-buttons button.active {
-    background-color: #28a745;
-  }
-  
-  .toggle-buttons button.inactive {
-    background-color: #6c757d;
-  }
-  
-  
-  .timeline {
-    width: 100%;
-    max-width: 800px;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 10px;
-  }
-  
-  .timeline-logs {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px;
-  }
-  
+/**** Main Section - Video ****/
 
-  /** graph **/
+/**** Main Section - Video ****/
 
-  .graphs {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 800px;
-  }
-  
-  .graph {
-    width: 30%;
-    border: 1px solid #ccc;
-    padding: 10px;
-  }
+.video-player-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-element {
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 10px;
+}
+
+.video-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  padding: 10px 20px;
+}
+
+.video-controls {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.video-controls button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.video-controls .video-time {
+  margin-left: 10px;
+}
+
+.toggle-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-button {
+  position: relative;
+  background-color: #ddd;
+  border: none;
+  border-radius: 99px;
+  width: 50px; 
+  height: 28px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-button .thumb {
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border-radius: 99px;
+  transform: translateX(0);
+  transition: left 0.15s ease;
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+.toggle-button.active .thumb {
+  left: calc(50px - 20px);
+}
+
+.toggle-button.active {
+  background-color: #28a745;
+}
+
+.toggle-button.inactive {
+  background-color: #6c757d;
+}
+
+.left-tgl, .right-tgl {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adjust gap as needed */
+}
+
+.timeline {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  border-bottom: 7px solid #ccc;
+ 
+  margin-bottom: 10px;
+  height: 20px; 
+}
+
+.timeline-logs {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.thumbnail-preview {
+  position: absolute;
+  bottom: 30px; /* Adjust to position the thumbnail above the timeline */
+  transform: translateX(-50%);
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.75);
+  color: rgb(248, 54, 54);
+  font-size: 12px;
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+/** graph **/
+
+.graphs {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 800px;
+}
+
+.graph {
+  width: 30%;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
