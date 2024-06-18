@@ -193,7 +193,6 @@
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-    
   }
   
   .search-container .search-icon {
@@ -225,8 +224,11 @@
     font-size: 14px;
   }
 
-
-/**** Main Section - Video ****/
+  .logs-container {
+    max-height: 300px; /* Set the max height of the scrollable area */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding-right: 10px; /* Ensure padding for scrollbar */
+  }
 
 /**** Main Section - Video ****/
 
