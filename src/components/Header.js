@@ -8,7 +8,7 @@ const Header = ({ stackId, crashId, crashDateTime, crashType }) => (
       <h1 className="app-name">FlashBack</h1>
     </div>
     <div className="middle-section">
-      <ul>
+      <ul className='menu'>
       <li>Stack ID {stackId}</li>
       <li>Crash ID {crashId}</li>
       <li>Crash Date and Time {crashDateTime}</li>

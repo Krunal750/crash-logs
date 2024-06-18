@@ -42,11 +42,16 @@
     border-radius: 10px;
   }
   
-  .middle-section ul {
-    display: flex;
-    justify-content: space-between;
+  ul {
     list-style-type: none;
   } 
+  
+  .menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+  }
   .left-section {
     display: flex;
     align-items: center;
@@ -63,8 +68,8 @@
   }
   
   .middle-section {
-    flex: 1;
-    margin: 0px 20px ;
+   
+    margin: 0px 30px ;
   }
   
   .right-section {
