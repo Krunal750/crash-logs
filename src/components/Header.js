@@ -5,7 +5,8 @@ const Header = ({ stackId, crashId, crashDateTime, crashType }) => (
   <header className="header">
     <div className="left-section">
       <img src={logo} alt="Logo" className="logo" />
-      <h1 className="app-name">FlashBack</h1>
+      <h1 className="app-name" style={{ textDecoration: "underline" }}>FlashBack</h1>
+
     </div>
     <div className="middle-section">
       <ul className='menu'>

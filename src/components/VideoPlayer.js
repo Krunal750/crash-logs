@@ -60,7 +60,7 @@ const VideoPlayer = () => {
   return (
     <div className="video-player-container">
       <video id="video-player" ref={videoRef} controls className="video-element">
-        <source src="F:\MERN\Adobe\crash-logs\src\assets\sample.mp4" type="video/mp4" />
+        <source src="./assets/sample.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div className='video-btns'>

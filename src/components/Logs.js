@@ -10,11 +10,12 @@ const Logs = () => {
   const [expandedLog, setExpandedLog] = useState(null);
 
   const logs = [
-    { id: 1, time: "00:48:1", type: "Launch", workflow: "Generative Fill", subtype: "Generate", eventType: "Success" },
-    { id: 2, time: "00:48:3", type: "Select", workflow: "Generative Fill", subtype: "Generate", eventType: "Success" },
-    { id: 3, time: "00:48:4", type: "Generative Fill", workflow: "Generative Fill", subtype: "Generate", eventType: "Success" },
-    { id: 4, time: "00:48:4", type: "Save", workflow: "Generative Fill", subtype: "Generate", eventType: "Success" }
+    { id: 1, time: "00:48:1", type: "Launch",custum_hb_type: "feature", Event_workflow: "Generative Fill",Event_Subcategory: "Operation", Event_subtype: "Generate", EventType: "Success",Custum_hb_Params: "history|zunlocalize|generative-fill",UI_View_Type: "History",Event_Value: "event value", },
+    { id: 2, time: "00:48:3", type: "Select", custum_hb_type: "feature", Event_workflow: "Generative Fill",Event_Subcategory: "Operation", Event_subtype: "Generate", EventType: "Success",Custum_hb_Params: "history|zunlocalize|generative-fill",UI_View_Type: "History",Event_Value: "event value",},
+    { id: 3, time: "00:48:4", type: "Generative Fill", custum_hb_type: "feature", Event_workflow: "Generative Fill",Event_Subcategory: "Operation", Event_subtype: "Generate", EventType: "Success",Custum_hb_Params: "history|zunlocalize|generative-fill",UI_View_Type: "History",Event_Value: "event value",},
+    { id: 4, time: "00:48:4", type: "Save", custum_hb_type: "feature", Event_workflow: "Generative Fill",Event_Subcategory: "Operation", Event_subtype: "Generate", EventType: "Success",Custum_hb_Params: "history|zunlocalize|generative-fill",UI_View_Type: "History",Event_Value: "event value", }
   ];
+
 
   const filteredLogs = logs.filter(log => log.type.toLowerCase().includes(searchTerm.toLowerCase()));
 
@@ -43,10 +44,24 @@ const Logs = () => {
           </h4>
           {expandedLog === log.id && (
             <div className="log-details">
-              <p>Event Workflow: {log.workflow}</p>
-              <p>Event Subtype: {log.subtype}</p>
-              <p>Event Type: {log.eventType}</p>
+              <p>custum_hb_type </p>
+              <p><b>{log.custum_hb_type}</b></p>
+              <p>Event Workflow </p>
+              <p><b>{log.Event_workflow}</b></p>
+              <p>Event Subcategory </p>
+              <p><b>{log.Event_Subcategory}</b></p>
+              <p>Event subtype </p>
+              <p><b>{log.Event_subtype}</b></p>
+              <p>Event Type </p>
+              <p><b>{log.EventType}</b></p>
+              <p>Custum_hb_Params </p>
+              <p><b>{log.Custum_hb_Params}</b></p>
+              <p>UI View Type </p>
+              <p><b>{log.UI_View_Type}</b></p>
+              <p>Event Value </p>
+              <p><b>{log.Event_Value}</b></p>
             </div>
+
           )}
         </div>
       ))}

@@ -24,14 +24,22 @@ const Activity = () => {
           </h4>
           {isSessionInfoVisible && (
             <div className="session-details">
-              <p>Project Name: ps-mac-service</p>
-              <p>Source Name: Adobe Photoshop</p>
-              <p>Source Version: 25.6.0</p>
-              <p>Crash OS: MAC-ARM-64</p>
-              <p>Event Session GUID: 130cfc64-...</p>
-              <p>Event User GUID: 24ADL...@AdobeID</p>
-            </div>
+              <p>Project Name</p> 
+              <p><b>ps-mac-sevice</b></p>
+              <p>Source Name</p>
+              <p><b>Adobe Photoshop</b></p>
+              <p>Source Version</p>
+              <p><b>25.6.0</b></p>
+              <p>Source Platform</p>
+              <p><b>MAC-ARM-64</b></p>
+              <p>Event Session GUID</p>
+              <p><b>130efc64-e1ab-4d22-8953-b017cb8dcb4b</b></p>
+              <p>Event User GUID</p>
+              <p><b>66F122964D0F63360A746C14@AdobeID</b></p>
+
+              </div>
           )}
+
         </div>
       
       <div className="notes-section">
