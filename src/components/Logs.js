@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import { FaSearch, FaChevronDown, FaChevronUp, FaTimes } from 'react-icons/fa';
+import { TbLogs } from "react-icons/tb";
+import { PiCaretCircleUp, PiCaretCircleDown } from "react-icons/pi";
+import {  FaTimes } from 'react-icons/fa';
+import { FiSearch } from "react-icons/fi";
+
 
 const Logs = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -20,9 +24,9 @@ const Logs = () => {
 
   return (
     <aside className="logs">
-      <h2>Logs</h2>
+      <h2> <TbLogs /> Logs</h2>
       <div className="search-container">
-        <FaSearch className="search-icon" />
+        <FiSearch className="search-icon" />
         <input
           type="text"
           placeholder="Filter Event"
@@ -33,9 +37,10 @@ const Logs = () => {
       </div>
       {filteredLogs.map(log => (
         <div key={log.id} className="log-event">
-          <h3 onClick={() => toggleLogVisibility(log.id)} className="collapsible-header">
-            {log.time} {log.type} {expandedLog === log.id ? <FaChevronUp /> : <FaChevronDown />}
-          </h3>
+          <h4 onClick={() => toggleLogVisibility(log.id)} className="collapsible-header">
+            <span>{expandedLog === log.id ? <PiCaretCircleUp /> : <PiCaretCircleDown />}</span>
+            {log.time} {log.type}
+          </h4>
           {expandedLog === log.id && (
             <div className="log-details">
               <p>Event Workflow: {log.workflow}</p>

@@ -11,7 +11,7 @@
     align-items: center;
     padding: 10px 20px;
     background-color: #f8f9fa;
-    border-bottom: 1px solid #dee2e6;
+    border-bottom: 2px solid #dee2e6;
   
   }
   .content {
@@ -45,7 +45,7 @@
   ul {
     list-style-type: none;
   } 
-  
+
   .menu{
     display: flex;
     justify-content: space-between;
@@ -125,13 +125,15 @@
   
   .collapsible-header {
     display: flex;
+    cursor: pointer;
+  }
+
+  .collapsible-header span {
+    display: flex;
     align-items: center;
-    justify-content: space-between;
+    margin-right: 16px; 
   }
-  
-  .collapsible-header svg {
-    margin-left: 10px;
-  }
+ 
   .main-content {
     flex: 1;
     padding: 20px;
@@ -151,11 +153,26 @@
     padding: 20px;
     
   }
+  .search-icon {
+    margin-right: 8px;
+  }
+  
+  .clear-icon {
+    cursor: pointer;
+    margin-left: 8px;
+  }
+  
   
   .logs h2 {
     margin-bottom: 10px;
   }
   
+
+  .collapsible-header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
   .log-event {
     margin-bottom: 10px;
   }
@@ -183,12 +200,12 @@
     border-radius: 10px;
   }
   
-  .log-event h3 {
+  .log-event h4 {
     cursor: pointer;
     display: flex;
     font-size: 18px;
     align-items: center;
-    justify-content: space-between;
+   font-weight: normal;
   }
   
   .log-details p {
@@ -196,6 +213,11 @@
     font-size: 14px;
   }
 
+  /**** Main Section - Video ****/
+
+  .video-btns{
+    width: 100%;
+  }
   .video-player-container {
     display: flex;
     flex-direction: column;
@@ -233,28 +255,46 @@
     margin-bottom: 10px;
   }
   
-  .toggle-buttons button {
-    padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  background-color: #007bff;
-  color: white;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.3s;
-}
-
-.toggle-buttons button:hover {
-  background-color: #0056b3;
-}
-
-.toggle-buttons button.active {
-  background-color: #28a745;
-}
-
-.toggle-buttons button.inactive {
-  background-color: #6c757d;
-}
+  .toggle-button {
+    position: relative;
+    background-color: #ddd;
+    border: none;
+    border-radius: 99px;
+    width: 50px; 
+    height: 28px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .toggle-button .thumb {
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border-radius: 99px;
+    transform: translateX(0);
+    transition: left 0.15s ease;
+    position: absolute;
+    transform: translateY(-50%);
+  }
+  
+  .toggle-button.active .thumb {
+    left: calc(50px - 20px);
+  }
+  
+  
+  .toggle-buttons button:hover {
+    background-color: #0056b3;
+  }
+  
+  .toggle-buttons button.active {
+    background-color: #28a745;
+  }
+  
+  .toggle-buttons button.inactive {
+    background-color: #6c757d;
+  }
+  
   
   .timeline {
     width: 100%;
@@ -269,6 +309,9 @@
     padding: 5px;
   }
   
+
+  /** graph **/
+
   .graphs {
     display: flex;
     justify-content: space-around;

@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa'; // Import icons
+import { PiCaretCircleUp, PiCaretCircleDown } from "react-icons/pi";
 
 const Activity = () => {
   const [isSessionInfoVisible, setIsSessionInfoVisible] = useState(false);
+  const [areNotesVisible, setAreNotesVisible] = useState(false);
 
   const toggleSessionInfoVisibility = () => {
     setIsSessionInfoVisible(!isSessionInfoVisible);
+  };
+
+  const toggleNotesVisibility = () => {
+    setAreNotesVisible(!areNotesVisible);
   };
 
   return (
@@ -13,9 +18,10 @@ const Activity = () => {
       <div className="activity-section">
         <h2>Activity</h2>
         <div className="session-info">
-          <h3 onClick={toggleSessionInfoVisibility} className="collapsible-header">
-            Session Info {isSessionInfoVisible ? <FaChevronUp /> : <FaChevronDown />}
-          </h3>
+          <h4 onClick={toggleSessionInfoVisibility} className="collapsible-header">
+            <span>{isSessionInfoVisible ? <PiCaretCircleUp /> : <PiCaretCircleDown />}</span>
+            Session Info
+          </h4>
           {isSessionInfoVisible && (
             <div className="session-details">
               <p>Project Name: ps-mac-service</p>
@@ -27,14 +33,18 @@ const Activity = () => {
             </div>
           )}
         </div>
-      </div>
+      
       <div className="notes-section">
-        <h3 onClick={toggleSessionInfoVisibility} className="collapsible-header">Notes {isSessionInfoVisible ? <FaChevronUp /> : <FaChevronDown />}</h3>
-        {isSessionInfoVisible && ( 
+        <h4 onClick={toggleNotesVisibility} className="collapsible-header">
+          <span>{areNotesVisible ? <PiCaretCircleUp /> : <PiCaretCircleDown />}</span>
+          Notes
+        </h4>
+        {areNotesVisible && ( 
           <div className="notes-details">
             <button>Add</button>
-            </div>
+          </div>
         )}
+      </div>
       </div>
     </aside>
   );

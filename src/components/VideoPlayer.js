@@ -1,11 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaPlay, FaPause, FaStepBackward, FaStepForward } from 'react-icons/fa';
-
 
 const VideoPlayer = () => {
   const [skipInactivity, setSkipInactivity] = useState(false);
   const [showGraph, setShowGraph] = useState(true);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+
+  useEffect(() => {
+    const videoElement = document.getElementById('video-player');
+    const updateTime = () => {
+      setCurrentTime(videoElement.currentTime);
+      setDuration(videoElement.duration);
+    };
+    videoElement.addEventListener('timeupdate', updateTime);
+    return () => {
+      videoElement.removeEventListener('timeupdate', updateTime);
+    };
+  }, []);
 
   const handlePlayPause = () => {
     const videoElement = document.getElementById('video-player');
@@ -19,48 +32,61 @@ const VideoPlayer = () => {
 
   const handleSkipInactivity = () => {
     setSkipInactivity(!skipInactivity);
-    // Add logic to handle inactivity skipping
+    // Add logic to handle inactivity skipping if needed
   };
 
   const handleShowHideGraph = () => {
     setShowGraph(!showGraph);
   };
 
+  const formatTime = (time) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  };
+
   return (
     <div className="video-player-container">
       <video id="video-player" controls className="video-element">
-        <source src="your-video-source.mp4" type="video/mp4" />
+        <source src="../assets/logo.jpgsample.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+      <div className='video-btns'>
       <div className="video-controls">
-        <button onClick={handlePlayPause}>
-          {isPlaying ? <FaPause /> : <FaPlay />}
-        </button>
         <button>
           <FaStepBackward />
         </button>
+        <button onClick={handlePlayPause}>
+          {isPlaying ? <FaPause /> : <FaPlay />}
+        </button>
+        
         <button>
           <FaStepForward />
         </button>
-        <span className="video-time">2:11 / 11:00</span>
+        <span className="video-time">
+          {formatTime(currentTime)} / {formatTime(duration)}
+        </span>
       </div>
+
       <div className="toggle-buttons">
         <button
-          className={skipInactivity ? 'active' : 'inactive'}
+          className={`toggle-button ${skipInactivity ? 'active' : 'inactive'}`}
           onClick={handleSkipInactivity}
         >
-          {skipInactivity ? 'Don’t Skip Inactivity' : 'Skip Inactivity'}
+          <div className="thumb" />
+          
         </button>
         <button
-          className={showGraph ? 'active' : 'inactive'}
+          className={`toggle-button ${showGraph ? 'active' : 'inactive'}`}
           onClick={handleShowHideGraph}
         >
-          {showGraph ? 'Hide Graph' : 'Show Graph'}
+          <div className="thumb" />
         </button>
       </div>
+    </div>
       <div className="timeline">
         <div className="timeline-logs">
-          {/* Add logic to display logs on the timeline */}
+          {/*  display logs on the timeline */}
         </div>
       </div>
       {showGraph && (
