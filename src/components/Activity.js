@@ -36,7 +36,6 @@ const Activity = () => {
               <p><b>130efc64-e1ab-4d22-8953-b017cb8dcb4b</b></p>
               <p>Event User GUID</p>
               <p><b>66F122964D0F63360A746C14@AdobeID</b></p>
-
               </div>
           )}
 
@@ -47,11 +46,33 @@ const Activity = () => {
           <span>{areNotesVisible ? <PiCaretCircleUp /> : <PiCaretCircleDown />}</span>
           Notes
         </h4>
-        {areNotesVisible && ( 
-          <div className="notes-details">
-            <button>Add</button>
-          </div>
-        )}
+        <div className='notes-container'>
+          {areNotesVisible && ( 
+            <div className="notes-details">
+              <p>one</p>
+              <p>one</p>
+              <p>one</p>
+              <p>one</p>
+              <p>one</p>
+              <p>one</p>
+              <p>one</p>
+              <p>one</p>
+              <p>one</p>
+              <p>one</p>
+              <p>one</p>
+              <p>one</p>
+              <p>one</p>
+              <p>one</p>
+              <p>one</p>
+              <p>one</p>
+              <p>one</p>
+              <p>one</p>
+              <p>one</p>
+              
+              <button>Add</button>
+            </div>
+          )}
+        </div>
       </div>
       </div>
     </aside>
