@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TbLogs } from "react-icons/tb";
+import { RxDragHandleDots2 } from "react-icons/rx";
 import { PiCaretCircleUp, PiCaretCircleDown } from "react-icons/pi";
 import { FaTimes } from 'react-icons/fa';
 import { FiSearch } from "react-icons/fi";
@@ -23,7 +23,7 @@ const Logs = () => {
 
   return (
     <aside className="logs">
-      <h2> <TbLogs /> Logs</h2>
+      <h2> <RxDragHandleDots2 /> Logs</h2>
       <div className="search-container">
         <FiSearch className="search-icon" />
         <input
