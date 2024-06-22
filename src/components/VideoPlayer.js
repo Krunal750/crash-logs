@@ -121,11 +121,13 @@ const VideoPlayer = () => {
           </div>
         )}
       </div>
+      <div className='abovegraph'><span></span></div>
       {showGraph && (
         <div className="graphs">
-          <div className="graph">Graph 1</div>
+          {/* <div className="graph">Graph 1</div>
           <div className="graph">Graph 2</div>
-          <div className="graph">Graph 3</div>
+          <div className="graph">Graph 3</div> */}
+          <h3 className='graph'>Graphs Are Coming Soon...</h3>
         </div>
       )}
     </div>
