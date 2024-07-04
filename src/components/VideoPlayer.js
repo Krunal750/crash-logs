@@ -14,11 +14,15 @@ const VideoPlayer = () => {
 
   useEffect(() => {
     const videoElement = videoRef.current;
+    if (!videoElement) return;
+
     const updateTime = () => {
       setCurrentTime(videoElement.currentTime);
       setDuration(videoElement.duration);
     };
+
     videoElement.addEventListener('timeupdate', updateTime);
+
     return () => {
       videoElement.removeEventListener('timeupdate', updateTime);
     };
@@ -26,12 +30,18 @@ const VideoPlayer = () => {
 
   const handlePlayPause = () => {
     const videoElement = videoRef.current;
-    if (isPlaying) {
-      videoElement.pause();
+    if (!videoElement) return;
+
+    if (videoElement.paused) {
+      videoElement.play().then(() => {
+        setIsPlaying(true);
+      }).catch(error => {
+        console.error('Failed to start playback:', error);
+      });
     } else {
-      videoElement.play();
+      videoElement.pause();
+      setIsPlaying(false);
     }
-    setIsPlaying(!isPlaying);
   };
 
   const handleSkipInactivity = () => {
@@ -43,8 +53,26 @@ const VideoPlayer = () => {
     setShowGraph(!showGraph);
   };
 
+  const handleSkipBackward = () => {
+    const videoElement = videoRef.current;
+    if (!videoElement) return;
+
+    videoElement.currentTime -= 10; // Skip 10 seconds backward
+    setCurrentTime(videoElement.currentTime);
+  };
+
+  const handleSkipForward = () => {
+    const videoElement = videoRef.current;
+    if (!videoElement) return;
+
+    videoElement.currentTime += 10; // Skip 10 seconds forward
+    setCurrentTime(videoElement.currentTime);
+  };
+
   const handleMouseMove = (e) => {
     const progressBar = progressBarRef.current;
+    if (!progressBar) return;
+
     const rect = progressBar.getBoundingClientRect();
     const hoverTime = ((e.clientX - rect.left) / rect.width) * duration;
     setHoverTime(hoverTime);
@@ -59,10 +87,14 @@ const VideoPlayer = () => {
 
   return (
     <div className="video-player-container">
-      <video id="video-player" ref={videoRef} controls className="video-element">
-        <source src="./assets/sample.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      <iframe
+        title="YouTube Video"
+        width="800" // Adjust width as needed
+        height="450" // Adjust height as needed
+        src="https://www.youtube.com/embed/gPIoZkG5HRk"
+        frameBorder="0"
+        allowFullScreen
+      />
       <div className='video-btns'>
         <div className="toggle-buttons">
           <div className='left-tgl'>
@@ -77,13 +109,13 @@ const VideoPlayer = () => {
         </div>
         
         <div className="video-controls">
-          <button>
+          <button onClick={handleSkipBackward}>
             <FaStepBackward />
           </button>
           <button onClick={handlePlayPause}>
             {isPlaying ? <FaPause /> : <FaPlay />}
           </button>
-          <button>
+          <button onClick={handleSkipForward}>
             <FaStepForward />
           </button>
           <span className="video-time">
